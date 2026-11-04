@@ -1,0 +1,55 @@
+{
+    "name": "fayne/laravel-filament-audit",
+    "description": "Optional queued operation auditing for CMS and Filament.",
+    "type": "library",
+    "license": "proprietary",
+    "require": {
+        "php": "^8.4",
+        "fayne/laravel-filament-cms-core": "dev-master",
+        "illuminate/queue": "^13.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Fayne\\Audit\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Fayne\\Audit\\AuditServiceProvider"
+            ]
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "authors": [
+        {
+            "name": "Fayne Guo",
+            "email": "fayne.guo@gmail.com"
+        }
+    ],
+    "keywords": [
+        "laravel",
+        "filament",
+        "audit"
+    ],
+    "require-dev": {
+        "laravel/pint": "^1.27",
+        "orchestra/testbench": "^11.0"
+    },
+    "scripts": {
+        "lint": "@php tools/lint.php",
+        "format": "pint --test",
+        "format:fix": "pint",
+        "check": [
+            "@lint",
+            "@format",
+            "@test"
+        ],
+        "test": "phpunit -c phpunit.standalone.xml.dist"
+    },
+    "$schema": "https://getcomposer.org/schema.json",
+    "support": {
+        "email": "fayne.guo@gmail.com"
+    }
+}

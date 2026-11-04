@@ -1,0 +1,1 @@
+<phpunit bootstrap="tests/bootstrap.php" colors="true"><testsuites><testsuite name="Audit"><directory>tests</directory></testsuite></testsuites><php><env name="APP_ENV" value="testing" force="true"/></php></phpunit>
