@@ -4,7 +4,12 @@ return [
     'enabled' => env('FILAMENT_AUDIT_ENABLED', false),
     'driver' => 'database',
     'database' => ['connection' => null],
-    'queue' => ['connection' => env('FILAMENT_AUDIT_QUEUE_CONNECTION', 'database'), 'name' => 'audit', 'tries' => 5, 'backoff' => [10, 60, 300]],
+    'queue' => [
+        'connection' => env('FILAMENT_AUDIT_QUEUE_CONNECTION', 'database'),
+        'name' => 'default',
+        'tries' => 5,
+        'backoff' => [10, 60, 300],
+    ],
     // Null disables automatic deletion until a retention period is explicitly chosen.
     'retention_days' => env('FILAMENT_AUDIT_RETENTION_DAYS'),
     'prune_batch_size' => 500,

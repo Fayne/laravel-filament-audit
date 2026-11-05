@@ -23,7 +23,7 @@ final class AuditServiceProvider extends ServiceProvider
     public function boot(): void
     {
         $this->loadMigrationsFrom(__DIR__ . '/../database/migrations');
-        $this->publishes([__DIR__ . '/../config/filament-audit.php' => config_path('filament-audit.php')], 'filament-audit-config');
+        $this->publishes([__DIR__ . '/../config/filament-audit.php' => config_path('filament-audit.php')], ['filament-audit-config', 'cms-module-assets']);
         if ($this->app->runningInConsole()) {
             $this->commands([\Fayne\Audit\Console\PruneAudit::class, \Fayne\Audit\Console\CheckAudit::class, \Fayne\Audit\Console\InstallPermissions::class]);
         }
